@@ -1,0 +1,17 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    height: 100%;
+
+    > h1 {
+        flex: 1;
+    }
+    > .asideLink {
+        flex: 3;
+    }
+    > .logoutBtn {
+        flex: 1;
+    }
+
+}
