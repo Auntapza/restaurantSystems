@@ -22,6 +22,8 @@ let Sidebar = () => {
                     </Link>
                 </ul>
 
+                <h1>พ่อมึงตาย</h1>
+
                 <button className="logoutBtn">Logout</button>
             </aside>
         </>
