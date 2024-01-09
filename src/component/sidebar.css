@@ -1,17 +1,95 @@
 aside {
-    display: flex;
-    flex-direction: column;
-    max-width: 350px;
-    height: 100%;
+    display: grid;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 1rem;
+    width: 80px;
+    transition: .5s;
+    border-radius: 10px;
+    grid-template-rows: auto 1fr auto;
+    box-shadow: 0px 0px 5px 1px #00000044;
+    user-select: none;
+    grid-area: sidebar;
 
-    > h1 {
-        flex: 1;
-    }
-    > .asideLink {
-        flex: 3;
-    }
-    > .logoutBtn {
-        flex: 1;
+    menu {
+        div {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            transform: .5s;
+            img {
+                border-radius: 5px;
+                background-color: #D9D9D944;
+            }
+            > span {
+                transition: .5s;
+                width: 0;
+                overflow: hidden;
+                opacity: 0;
+            }
+        }
+        hr {
+            border: 1px solid #fff;
+            margin-top: 1rem;
+        }
     }
 
+    ul.asideLink {
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 35px;
+
+        li {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            span {
+                transition: .25s;
+                width: 0;
+                opacity: 0;
+                font-size: .8em;
+            }
+        }
+    }
+
+    > button {
+        border: 0;
+        outline: 0;
+        background-color: #FF0707;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding: .5rem;
+        overflow: hidden;
+
+        > span {
+            margin-left: 1rem;
+            text-align: center;
+            width: 100%;
+            font-size: 1.2em;
+        }
+    }
+}
+
+aside:hover {
+    width: 220px;
+    ul.asideLink {
+        li {
+            span {
+                margin-left: 1rem;
+                width: 100px;
+                opacity: 1;
+            }
+        }
+    }
+
+    menu {
+        > div span {
+            margin-left: 1rem;
+            opacity: 1;
+            width: 100px;
+        }
+    }
 }

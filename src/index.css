@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap');
 
+:root {
+  --primary: #1894DA;
+  --secondary: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +13,8 @@
   color: inherit;
   outline: 0;
   font-family: 'kanit', sans-serif;
+  list-style: none;
+  color: inherit;
 }
 
 .container {
@@ -19,4 +26,20 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.flex {
+  display: grid;
+  grid-template-areas: "sidebar header header"
+                        "sidebar body body"
+                        "sidebar body body";
+}
+
+.flex.page {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
 }
