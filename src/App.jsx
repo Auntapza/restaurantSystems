@@ -3,19 +3,23 @@ import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Sidebar from './component/sidebar'
 import HomePage from './component/homepage/homepage'
+import User from './component/user/userManage'
 
 function App() {
+
   return (
     <>
       <div className='flex page'>
         <Sidebar />
         <header>
-          <h1>test</h1>
+          <h1>HomePage - Admin Dashbord</h1>
         </header>
-        <Routes>
-          <Route path="/" Component={HomePage}/>
-          <Route path="/foodSummery" Component={'foodSummery'}/>
-        </Routes>
+        <div className='body'>
+          <Routes>
+            <Route path="/" Component={HomePage}/>
+            <Route path="/user" Component={User}/>
+          </Routes>
+        </div>
       </div>
     </>
   )

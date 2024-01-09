@@ -1,3 +1,12 @@
 header {
     grid-area: header;
+    background-color: var(--primary);
+    border-radius: 10px;
+    color: var(--secondary);
+    padding: .5rem 1rem;
+    box-shadow: 0px 0px 10px 1px #00000033;
+    
+    h1 {
+        font-weight: 400;
+    }
 }
