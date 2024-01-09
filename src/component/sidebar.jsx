@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
 import './sidebar.css'
 import menu from '../assets/menu.svg';
@@ -8,42 +8,47 @@ import signOut from '../assets/Sign_out_squre.svg';
 import chart from '../assets/Chart_light.svg';
 import homeIcon from '../assets/Home_light.svg';
 
+let urlPath = location.pathname;
+
 let Sidebar = () => {
 
     let [active, setActive] = React.useState("home")
     let [position, setPosition] = React.useState(100)
 
-    // useEffect(() => {
-    //     setUrl(location.pathname)
-    //     console.log("change");
-    // }),[]
-
+    
     let setStyle = (path) => {
         switch (path) {
-            case "home":
+            case "/home":
                 setPosition(100)
                 setActive("home")
                 break;
-            case "user":
-                setPosition(183)
-                setActive("user")
-                break;
-            case "menu":
+                case "/user":
+                    setPosition(183)
+                    setActive("user")
+                    break;
+            case "/menu":
                 setPosition(264)
                 setActive("menu")
                 break;
-            case "summery":
+            case "/summery":
                 setPosition(345)
                 setActive("summery")
                 break;
-        }
+            }
+    }
 
+    window.onload = () => {
+        if (urlPath !== '/') {
+            setStyle(`${urlPath}`)
+        } else {
+            setStyle('/home')
+        }
     }
 
     return (
         <>
             <aside>
-                <div className="higlight" style={{top: position}}></div>
+                <div className="higlight" style={{ top: position }}></div>
                 <menu>
                     <div>
                         <img src={menu} alt="" />
@@ -52,25 +57,25 @@ let Sidebar = () => {
                     <hr />
                 </menu>
                 <ul className="asideLink">
-                    <Link to={'/'} onClick={() => {setStyle('home')}}>
+                    <Link to={'/'} onClick={() => { setStyle('/home') }}>
                         <li className={active == 'home' ? 'active' : ''}>
                             <img src={homeIcon} alt="" />
                             <span>Home</span>
                         </li>
                     </Link>
-                    <Link to={'/user'} onClick={() => {setStyle('user')}}>
+                    <Link to={'/user'} onClick={() => { setStyle('/user') }}>
                         <li className={active == 'user' ? 'active' : ''}>
                             <img src={user} alt="" />
                             <span>Manage Uesr Info</span>
                         </li>
                     </Link>
-                    <Link to={'/menu'} onClick={() => {setStyle('menu')}}>
+                    <Link to={'/menu'} onClick={() => { setStyle('/menu') }}>
                         <li className={active == 'menu' ? 'active' : ''}>
                             <img src={pizza} alt="" />
                             <span>Menage Menu</span>
                         </li>
                     </Link>
-                    <Link to={'/summery'} onClick={() => {setStyle('summery')}}>
+                    <Link to={'/summery'} onClick={() => { setStyle('/summery') }}>
                         <li className={active == 'summery' ? 'active' : ''}>
                             <img src={chart} alt="" />
                             <span>Summery</span>

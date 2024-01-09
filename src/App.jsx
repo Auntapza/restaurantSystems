@@ -11,7 +11,7 @@ function App() {
     <>
       <div className='flex page'>
         <Sidebar />
-        <header>
+        <header className='title-header'>
           <h1>HomePage - Admin Dashbord</h1>
         </header>
         <div className='body'>
