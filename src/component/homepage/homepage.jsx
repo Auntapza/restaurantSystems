@@ -31,7 +31,7 @@ let homepage = () => {
                     <header className="title-header">
                         <h1>Lastest 10 User register</h1>
                     </header>
-                    <header className="title-header" style={{gridColumn: "2 / 2 span"}}>
+                    <header className="title-header span">
                         <h1>Rankings</h1>
                     </header>
                     <div className="content-1"></div>

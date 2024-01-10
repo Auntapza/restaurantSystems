@@ -41,6 +41,8 @@
 .flex.page {
   padding: 1rem;
   min-height: 100vh;
+  height: max-content;
+  height: 500%;
 }
 
 body {
@@ -49,4 +51,5 @@ body {
 
 div.body {
   grid-area: body;
+  height: max-content;
 }
