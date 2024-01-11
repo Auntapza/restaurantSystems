@@ -37,12 +37,11 @@
             }
             
             > div:has(img) {
-                display: unset;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 padding: unset;
                 border-width: 1px;
-                > img {
-                    object-fit: fill;
-                }
             }
             > span {
                 font-size: 2em;
@@ -82,11 +81,12 @@
     .Homepage {
         .status > div {
             gap: .5rem !important;
+            padding: 1rem 3rem;
             div:has(:not(img)) {
-                border-width: 5px !important;
+                border-width: 7px !important;
                 padding: .6rem !important;
                 span {
-                    font-size: .4em !important;
+                    font-size: .7em !important;
                 }
             }
             span {
@@ -129,8 +129,5 @@
         'content' !important
         ;
         grid-template-rows: 1fr 3.5fr;
-    }
-
-    
-    
+    }    
 }

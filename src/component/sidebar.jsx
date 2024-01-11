@@ -8,7 +8,13 @@ import signOut from '../assets/Sign_out_squre.svg';
 import chart from '../assets/Chart_light.svg';
 import homeIcon from '../assets/Home_light.svg';
 
-let urlPath = location.pathname;
+let urlPath = "";
+
+for (let i = 0; i <= 4; i++) {
+    urlPath += window.location.pathname[i]
+}
+
+console.log(urlPath);
 
 let Sidebar = () => {
 
@@ -30,7 +36,7 @@ let Sidebar = () => {
                 setPosition(264)
                 setActive("menu")
                 break;
-            case "/summery":
+            case "/summ":
                 setPosition(345)
                 setActive("summery")
                 break;
@@ -75,7 +81,7 @@ let Sidebar = () => {
                             <span>Menage Menu</span>
                         </li>
                     </Link>
-                    <Link to={'/summery'} onClick={() => { setStyle('/summery') }}>
+                    <Link to={'/summ'} onClick={() => { setStyle('/summ') }}>
                         <li className={active == 'summery' ? 'active' : ''}>
                             <img src={chart} alt="" />
                             <span>Summery</span>
